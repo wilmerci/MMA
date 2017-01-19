@@ -1,0 +1,31 @@
+record `com.ksu.explicit_nosrc_sink.MainActivity` @kind class @AccessFlag PUBLIC extends `android.app.Activity` @kind class {
+}
+procedure `void` `com.ksu.explicit_nosrc_sink.MainActivity.<init>`(`com.ksu.explicit_nosrc_sink.MainActivity` MainActivity_v0 @kind this) @owner ^`com.ksu.explicit_nosrc_sink.MainActivity` @signature `Lcom/ksu/explicit_nosrc_sink/MainActivity;.<init>:()V` @AccessFlag PUBLIC_CONSTRUCTOR {
+
+  #L02c250.  call `android.app.Activity.<init>`(MainActivity_v0) @signature `Landroid/app/Activity;.<init>:()V` @classDescriptor ^`android.app.Activity` @kind direct;
+  #L02c256.  return  @kind void;
+}
+procedure `void` `com.ksu.explicit_nosrc_sink.MainActivity.onCreate`(`com.ksu.explicit_nosrc_sink.MainActivity` MainActivity_v4 @kind this, `android.os.Bundle` Bundle_v5 @kind object) @owner ^`com.ksu.explicit_nosrc_sink.MainActivity` @signature `Lcom/ksu/explicit_nosrc_sink/MainActivity;.onCreate:(Landroid/os/Bundle;)V` @AccessFlag PROTECTED {
+    `android.content.Context` Context_temp;
+    `int` int_v2;
+    `android.content.Context` Context_v2;
+    `android.content.Intent` Intent_temp;
+    `java.lang.Class` Class_v3;
+    `android.content.Intent` Intent_v0;
+    `java.lang.String` String_v2;
+    `java.lang.String` String_v1;
+
+  #L02c268.  call `android.app.Activity.onCreate`(MainActivity_v4, Bundle_v5) @signature `Landroid/app/Activity;.onCreate:(Landroid/os/Bundle;)V` @classDescriptor ^`android.app.Activity` @kind super;
+  #L02c26e.  int_v2:= 2130903040I;
+  #L02c272.  call `com.ksu.explicit_nosrc_sink.MainActivity.setContentView`(MainActivity_v4, int_v2) @signature `Lcom/ksu/explicit_nosrc_sink/MainActivity;.setContentView:(I)V` @classDescriptor ^`com.ksu.explicit_nosrc_sink.MainActivity` @kind virtual;
+  #L02c278.  String_v1:= "noSrc" @kind object;
+  #L02c27c.  Intent_v0:= new `android.content.Intent`;
+  #L02c280.  call Context_temp:=  `com.ksu.explicit_nosrc_sink.MainActivity.getApplicationContext`(MainActivity_v4) @signature `Lcom/ksu/explicit_nosrc_sink/MainActivity;.getApplicationContext:()Landroid/content/Context;` @classDescriptor ^`com.ksu.explicit_nosrc_sink.MainActivity` @kind virtual;
+  #L02c286.  Context_v2:= Context_temp  @kind object;
+  #L02c288.  Class_v3:= constclass @type ^`com.ksu.explicit_nosrc_sink.FooActivity` @kind object;
+  #L02c28c.  call `android.content.Intent.<init>`(Intent_v0, Context_v2, Class_v3) @signature `Landroid/content/Intent;.<init>:(Landroid/content/Context;Ljava/lang/Class;)V` @classDescriptor ^`android.content.Intent` @kind direct;
+  #L02c292.  String_v2:= "data" @kind object;
+  #L02c296.  call Intent_temp:=  `android.content.Intent.putExtra`(Intent_v0, String_v2, String_v1) @signature `Landroid/content/Intent;.putExtra:(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;` @classDescriptor ^`android.content.Intent` @kind virtual;
+  #L02c29c.  call `com.ksu.explicit_nosrc_sink.MainActivity.startActivity`(MainActivity_v4, Intent_v0) @signature `Lcom/ksu/explicit_nosrc_sink/MainActivity;.startActivity:(Landroid/content/Intent;)V` @classDescriptor ^`com.ksu.explicit_nosrc_sink.MainActivity` @kind virtual;
+  #L02c2a2.  return  @kind void;
+}
