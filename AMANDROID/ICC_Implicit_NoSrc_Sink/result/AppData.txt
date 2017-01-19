@@ -1,0 +1,41 @@
+Application Name: ICC_Implicit_NoSrc_Sink.apk
+Uses Permissions: android.permission.READ_PHONE_STATE
+
+Component com.ksu.implicit_nosrc_sink.FooActivity
+  Component type: activity
+  Exported: true
+  Dynamic Registered: false
+  Required Permission: 
+  IntentFilters:
+    IntentFilter:(Actions:["amandroid.impliciticctest_action.testaction"],Categories:["android.intent.category.DEFAULT"])
+
+  Inter-component communication (ICC) Result:
+
+
+Component com.ksu.implicit_nosrc_sink.MainActivity
+  Component type: activity
+  Exported: true
+  Dynamic Registered: false
+  Required Permission: 
+  IntentFilters:
+    IntentFilter:(Actions:["android.intent.action.MAIN"],Categories:["android.intent.category.LAUNCHER"])
+
+  Inter-component communication (ICC) Result:
+    ICC call details are listed below:
+      Caller Procedure: Landroid/app/Activity;.startActivity:(Landroid/content/Intent;)V
+      Caller Context: (onCreate,L02c2fa)(envMain,L30)
+      Outgoing Intents via this call:
+        Intent:
+          mActions:
+            "amandroid.impliciticctest_action.testaction"
+          ICC destinations:
+            Target Component: com.ksu.implicit_nosrc_sink.FooActivity, Intent Type: IMPLICIT
+
+
+Taint analysis result:
+  Sources found:
+  Sinks found:
+    <Descriptors: icc_sink: L02c2fa 1>
+    <Descriptors: api_sink: Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I 0>
+    <Descriptors: api_sink: Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I 1>
+  Discovered taint paths are listed below:

@@ -1,0 +1,40 @@
+record `com.ksu.implicit_nosrc_sink.MainActivity` @kind class @AccessFlag PUBLIC extends `android.app.Activity` @kind class {
+}
+procedure `void` `com.ksu.implicit_nosrc_sink.MainActivity.<init>`(`com.ksu.implicit_nosrc_sink.MainActivity` MainActivity_v0 @kind this) @owner ^`com.ksu.implicit_nosrc_sink.MainActivity` @signature `Lcom/ksu/implicit_nosrc_sink/MainActivity;.<init>:()V` @AccessFlag PUBLIC_CONSTRUCTOR {
+
+  #L02c2b4.  call `android.app.Activity.<init>`(MainActivity_v0) @signature `Landroid/app/Activity;.<init>:()V` @classDescriptor ^`android.app.Activity` @kind direct;
+  #L02c2ba.  return  @kind void;
+}
+procedure `void` `com.ksu.implicit_nosrc_sink.MainActivity.onCreate`(`com.ksu.implicit_nosrc_sink.MainActivity` MainActivity_v3 @kind this, `android.os.Bundle` Bundle_v4 @kind object) @owner ^`com.ksu.implicit_nosrc_sink.MainActivity` @signature `Lcom/ksu/implicit_nosrc_sink/MainActivity;.onCreate:(Landroid/os/Bundle;)V` @AccessFlag PROTECTED {
+    `int` int_v2;
+    `android.content.Intent` Intent_temp;
+    `android.content.Intent` Intent_v0;
+    `java.lang.String` String_v2;
+    `java.lang.String` String_v1;
+
+  #L02c2cc.  call `android.app.Activity.onCreate`(MainActivity_v3, Bundle_v4) @signature `Landroid/app/Activity;.onCreate:(Landroid/os/Bundle;)V` @classDescriptor ^`android.app.Activity` @kind super;
+  #L02c2d2.  int_v2:= 2130903041I;
+  #L02c2d8.  call `com.ksu.implicit_nosrc_sink.MainActivity.setContentView`(MainActivity_v3, int_v2) @signature `Lcom/ksu/implicit_nosrc_sink/MainActivity;.setContentView:(I)V` @classDescriptor ^`com.ksu.implicit_nosrc_sink.MainActivity` @kind virtual;
+  #L02c2de.  String_v1:= "noSrc" @kind object;
+  #L02c2e2.  Intent_v0:= new `android.content.Intent`;
+  #L02c2e6.  String_v2:= "amandroid.impliciticctest_action.testaction" @kind object;
+  #L02c2ea.  call `android.content.Intent.<init>`(Intent_v0, String_v2) @signature `Landroid/content/Intent;.<init>:(Ljava/lang/String;)V` @classDescriptor ^`android.content.Intent` @kind direct;
+  #L02c2f0.  String_v2:= "data" @kind object;
+  #L02c2f4.  call Intent_temp:=  `android.content.Intent.putExtra`(Intent_v0, String_v2, String_v1) @signature `Landroid/content/Intent;.putExtra:(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;` @classDescriptor ^`android.content.Intent` @kind virtual;
+  #L02c2fa.  call `com.ksu.implicit_nosrc_sink.MainActivity.startActivity`(MainActivity_v3, Intent_v0) @signature `Lcom/ksu/implicit_nosrc_sink/MainActivity;.startActivity:(Landroid/content/Intent;)V` @classDescriptor ^`com.ksu.implicit_nosrc_sink.MainActivity` @kind virtual;
+  #L02c300.  return  @kind void;
+}
+procedure `boolean` `com.ksu.implicit_nosrc_sink.MainActivity.onCreateOptionsMenu`(`com.ksu.implicit_nosrc_sink.MainActivity` MainActivity_v2 @kind this, `android.view.Menu` Menu_v3 @kind object) @owner ^`com.ksu.implicit_nosrc_sink.MainActivity` @signature `Lcom/ksu/implicit_nosrc_sink/MainActivity;.onCreateOptionsMenu:(Landroid/view/Menu;)Z` @AccessFlag PUBLIC {
+    `android.view.MenuInflater` MenuInflater_v0;
+    `boolean` boolean_v0;
+    `int` int_v0;
+    `int` int_v1;
+    `android.view.MenuInflater` MenuInflater_temp;
+
+  #L02c314.  call MenuInflater_temp:=  `com.ksu.implicit_nosrc_sink.MainActivity.getMenuInflater`(MainActivity_v2) @signature `Lcom/ksu/implicit_nosrc_sink/MainActivity;.getMenuInflater:()Landroid/view/MenuInflater;` @classDescriptor ^`com.ksu.implicit_nosrc_sink.MainActivity` @kind virtual;
+  #L02c31a.  MenuInflater_v0:= MenuInflater_temp  @kind object;
+  #L02c31c.  int_v1:= 2131165184I;
+  #L02c320.  call `android.view.MenuInflater.inflate`(MenuInflater_v0, int_v1, Menu_v3) @signature `Landroid/view/MenuInflater;.inflate:(ILandroid/view/Menu;)V` @classDescriptor ^`android.view.MenuInflater` @kind virtual;
+  #L02c326.  boolean_v0:= 1I;
+  #L02c328.  return boolean_v0;
+}
