@@ -1,0 +1,59 @@
+Application Name: FieldAndObjectSensitivity_FieldFlowSensitivity1.apk
+Uses Permissions: android.permission.READ_PHONE_STATE
+
+Component com.ksu.fieldFlowSentivity.FooActivity
+  Component type: activity
+  Exported: false
+  Dynamic Registered: false
+  Required Permission: 
+  IntentFilters:
+
+  Inter-component communication (ICC) Result:
+
+
+Component com.ksu.fieldFlowSentivity.MainActivity
+  Component type: activity
+  Exported: true
+  Dynamic Registered: false
+  Required Permission: 
+  IntentFilters:
+    IntentFilter:(Actions:["android.intent.action.MAIN"],Categories:["android.intent.category.LAUNCHER"])
+
+  Inter-component communication (ICC) Result:
+    ICC call details are listed below:
+      Caller Procedure: Landroid/app/Activity;.startActivity:(Landroid/content/Intent;)V
+      Caller Context: (onCreate,L02c8dc)(envMain,L37)
+      Outgoing Intents via this call:
+        Intent:
+          mComponentNames:
+            "com.ksu.fieldFlowSentivity.FooActivity"
+          ICC destinations:
+            Target Component: com.ksu.fieldFlowSentivity.FooActivity, Intent Type: EXPLICIT
+
+
+Taint analysis result:
+  Sources found:
+    <Descriptors: api_source: Landroid/telephony/TelephonyManager?;.getDeviceId:()Ljava/lang/String; >
+  Sinks found:
+    <Descriptors: api_sink: Landroid/util/Log;.i:(Ljava/lang/String;Ljava/lang/String;)I 0>
+    <Descriptors: api_sink: Landroid/util/Log;.i:(Ljava/lang/String;Ljava/lang/String;)I 1>
+  Discovered taint paths are listed below:
+    TaintPath:
+      Source: <Descriptors: api_source: Landroid/telephony/TelephonyManager?;.getDeviceId:()Ljava/lang/String; >
+      Sink: <Descriptors: api_sink: Landroid/util/Log;.i:(Ljava/lang/String;Ljava/lang/String;)I 1>
+      Types: maliciousness:information_theft
+      The path consists of the following edges ("->"). The nodes have the context information (p1 to pn means which parameter). The source is at the top :
+        Call@(onCreate,L02c8dc)(envMain,L37)p1  ->
+        Entry@Lcom/ksu/fieldFlowSentivity/FooActivity;.env:(Landroid/content/Intent;)Vp0  ->
+        Call@(env,L6)p1  ->
+        VirtualBody@(env,L6)  ->
+        Call@(env,L9)p0  ->
+        Entry@Lcom/ksu/fieldFlowSentivity/FooActivity;.onCreate:(Landroid/os/Bundle;)Vp0  ->
+        Call@(onCreate,L02c7ac)(env,L9)p0  ->
+        ReturnVar@(onCreate,L02c7ac)(env,L9)  ->
+        (onCreate,L02c7b2)(env,L9)  ->
+        Call@(onCreate,L02c7b8)(env,L9)p0  ->
+        VirtualBody@(onCreate,L02c7b8)(env,L9)  ->
+        VirtualBody@(onCreate,L02c7c4)(env,L9)  ->
+        Call@(onCreate,L02c7d0)(env,L9)p1  ->
+        VirtualBody@(onCreate,L02c8ae)(envMain,L37)
