@@ -1,0 +1,1 @@
+MMA-JB is a Java project with the purpose to automate the building process of BAT and SH files too long because processing many entries of fyles.
