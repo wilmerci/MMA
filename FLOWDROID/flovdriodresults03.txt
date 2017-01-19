@@ -1,0 +1,45 @@
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.explicit_nosrc_sink.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.explicit_nosrc_sink.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 2 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 2 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\ICC_Explicit_NoSrc_Sink.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("deviceid", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.explicit_nosrc_sink.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.explicit_nosrc_sink.FooActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 136.013256 MB
+Analysis has run for 10.544441153 seconds

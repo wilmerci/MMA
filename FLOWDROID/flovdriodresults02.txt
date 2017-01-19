@@ -1,0 +1,46 @@
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.2 seconds.
+[Spark] Solution found in 0.2 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.fieldFlowSentivity.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.fieldFlowSentivity.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_foo.xml
+Found 2 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 4 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView], res/layout/activity_foo.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 4 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\FieldAndObjectSensitivity_FieldFlowSensitivity1.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink virtualinvoke $r0.<com.ksu.fieldFlowSentivity.MainActivity: void startActivity(android.content.Intent)>($r3), from the following sources:
+	- $r7 = virtualinvoke $r6.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.fieldFlowSentivity.MainActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 140.686584 MB
+Analysis has run for 10.40989748 seconds

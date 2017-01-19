@@ -1,0 +1,957 @@
+ 
+Inizio dello scanning massivo di tutti i file presenti nella directory da ispezionare attraverso Flowdroid.. 
+ 
+##### Analisi del file: AndroidSpecific_PrivateDataLeak3.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.passwordPassTest.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.passwordPassTest.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_bar.xml
+Found 2 layout controls in file res/layout/activity_foo.xml
+Warning: EditText is a phantom class!
+Warning: com.ksu.passwordPassTest.EditText is a phantom class!
+Warning: android.view.EditText is a phantom class!
+Warning: requestFocus is a phantom class!
+Warning: com.ksu.passwordPassTest.requestFocus is a phantom class!
+Warning: android.view.requestFocus is a phantom class!
+Warning: android.widget.requestFocus is a phantom class!
+Warning: android.webkit.requestFocus is a phantom class!
+Warning: Button is a phantom class!
+Warning: com.ksu.passwordPassTest.Button is a phantom class!
+Warning: android.view.Button is a phantom class!
+Found 3 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 3 components...
+Incremental callback analysis done.
+Found 5 callback methods for 3 components
+Found {res/layout/activity_main.xml=[2131230721 - android.widget.TextView, 2131230722 - android.widget.EditText, 2131230723 - android.widget.Button, -1 - android.widget.RelativeLayout], res/layout/activity_foo.xml=[-1 - android.widget.TextView, -1 - android.widget.RelativeLayout], res/layout/activity_bar.xml=[-1 - android.widget.RelativeLayout, 2131230720 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 5 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\AndroidSpecific_PrivateDataLeak3.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink virtualinvoke $r3.<com.ksu.passwordPassTest.MainActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r3 = virtualinvoke $r0.<com.ksu.passwordPassTest.MainActivity: android.view.View findViewById(int)>(2131230722) (in <com.ksu.passwordPassTest.MainActivity: void onCreate(android.os.Bundle)>)
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("password", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.passwordPassTest.BarActivity: android.content.Intent getIntent()>() (in <com.ksu.passwordPassTest.BarActivity: void onCreate(android.os.Bundle)>)
+Found a flow to sink virtualinvoke $r0.<com.ksu.passwordPassTest.FooActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.passwordPassTest.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.passwordPassTest.FooActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 52.434568 MB
+Analysis has run for 7.945253826 seconds
+ 
+##### Analisi del file: FieldAndObjectSensitivity_FieldFlowSensitivity1.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.fieldFlowSentivity.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.fieldFlowSentivity.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_foo.xml
+Found 2 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 4 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView], res/layout/activity_foo.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 4 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\FieldAndObjectSensitivity_FieldFlowSensitivity1.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink virtualinvoke $r0.<com.ksu.fieldFlowSentivity.MainActivity: void startActivity(android.content.Intent)>($r3), from the following sources:
+	- $r7 = virtualinvoke $r6.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.fieldFlowSentivity.MainActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 137.8092 MB
+Analysis has run for 7.009794847 seconds
+ 
+##### Analisi del file: ICC_Explicit_NoSrc_NoSink.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.explicit_nosrc_nosink.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.explicit_nosrc_nosink.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 2 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.TextView, -1 - android.widget.RelativeLayout]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 2 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\ICC_Explicit_NoSrc_NoSink.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Maximum memory consumption: 135.371008 MB
+Analysis has run for 6.783657278 seconds
+ 
+##### Analisi del file: ICC_Explicit_NoSrc_Sink.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.explicit_nosrc_sink.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.explicit_nosrc_sink.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 2 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 2 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\ICC_Explicit_NoSrc_Sink.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("deviceid", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.explicit_nosrc_sink.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.explicit_nosrc_sink.FooActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 133.501928 MB
+Analysis has run for 6.673740386 seconds
+ 
+##### Analisi del file: ICC_Explicit_Src_NoSink.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.explicit_src_nosink.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.explicit_src_nosink.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 2 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.TextView, -1 - android.widget.RelativeLayout]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 2 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\ICC_Explicit_Src_NoSink.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink virtualinvoke $r0.<com.ksu.explicit_src_nosink.MainActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r5 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.explicit_src_nosink.MainActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 135.39748 MB
+Analysis has run for 7.12573234 seconds
+ 
+##### Analisi del file: ICC_Explicit_Src_Sink.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.explicit_src_sink.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.explicit_src_sink.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 2 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 2 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\ICC_Explicit_Src_Sink.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink virtualinvoke $r0.<com.ksu.explicit_src_sink.MainActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r5 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.explicit_src_sink.MainActivity: void onCreate(android.os.Bundle)>)
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("deviceid", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.explicit_src_sink.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.explicit_src_sink.FooActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 134.114512 MB
+Analysis has run for 6.752403342 seconds
+ 
+##### Analisi del file: ICC_Implicit_NoSrc_NoSink.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.implicit_nosrc_nosink.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.implicit_nosrc_nosink.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_foo.xml
+Found 2 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 3 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView], res/layout/activity_foo.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 3 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\ICC_Implicit_NoSrc_NoSink.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Maximum memory consumption: 135.170544 MB
+Analysis has run for 6.757197895 seconds
+ 
+##### Analisi del file: ICC_Implicit_NoSrc_Sink.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.implicit_nosrc_sink.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.implicit_nosrc_sink.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_foo.xml
+Found 2 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 3 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView], res/layout/activity_foo.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 3 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\ICC_Implicit_NoSrc_Sink.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("deviceid", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.implicit_nosrc_sink.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.implicit_nosrc_sink.FooActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 128.111296 MB
+Analysis has run for 6.848146047 seconds
+ 
+##### Analisi del file: ICC_Implicit_Src_NoSink.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.implicit_src_nosink.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.implicit_src_nosink.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_foo.xml
+Found 2 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 3 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView], res/layout/activity_foo.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 3 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\ICC_Implicit_Src_NoSink.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink virtualinvoke $r0.<com.ksu.implicit_src_nosink.MainActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r5 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.implicit_src_nosink.MainActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 133.096224 MB
+Analysis has run for 6.736636414 seconds
+ 
+##### Analisi del file: ICC_Implicit_Src_Sink.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.implicit_src_sink.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.implicit_src_sink.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_foo.xml
+Found 2 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 3 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView], res/layout/activity_foo.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 3 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\ICC_Implicit_Src_Sink.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink virtualinvoke $r0.<com.ksu.implicit_src_sink.MainActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r5 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.implicit_src_sink.MainActivity: void onCreate(android.os.Bundle)>)
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("deviceid", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.implicit_src_sink.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.implicit_src_sink.FooActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 137.68088 MB
+Analysis has run for 7.273764459 seconds
+ 
+##### Analisi del file: InterComponentCommunication_DynRegister1.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.dynamicregister1.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.dynamicregister1.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 1 components...
+Incremental callback analysis done.
+Found 2 callback methods for 1 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.TextView, -1 - android.widget.RelativeLayout]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 2 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\InterComponentCommunication_DynRegister1.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Maximum memory consumption: 168.937648 MB
+Analysis has run for 7.215767021 seconds
+ 
+##### Analisi del file: InterComponentCommunication_DynRegister2.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.dynamicregister2.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.dynamicregister2.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 1 components...
+Incremental callback analysis done.
+Found 2 callback methods for 1 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 2 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\InterComponentCommunication_DynRegister2.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Maximum memory consumption: 170.733816 MB
+Analysis has run for 7.163489271 seconds
+ 
+##### Analisi del file: InterComponentCommunication_Explicit1.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.explicit1.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.explicit1.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 2 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 2 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\InterComponentCommunication_Explicit1.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink virtualinvoke $r0.<com.ksu.explicit1.MainActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r5 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.explicit1.MainActivity: void onCreate(android.os.Bundle)>)
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("deviceid", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.explicit1.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.explicit1.FooActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 134.94364 MB
+Analysis has run for 6.940475135 seconds
+ 
+##### Analisi del file: InterComponentCommunication_Implicit1.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.implicit1.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.implicit1.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_foo.xml
+Found 2 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 3 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView], res/layout/activity_foo.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 3 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\InterComponentCommunication_Implicit1.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("deviceid", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.implicit1.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.implicit1.FooActivity: void onCreate(android.os.Bundle)>)
+Found a flow to sink virtualinvoke $r0.<com.ksu.implicit1.MainActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r5 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.implicit1.MainActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 137.727488 MB
+Analysis has run for 6.898327668 seconds
+ 
+##### Analisi del file: InterComponentCommunication_Implicit2.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.implicit2.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.implicit2.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_foo.xml
+Found 2 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 3 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.TextView, -1 - android.widget.RelativeLayout], res/layout/activity_foo.xml=[-1 - android.widget.TextView, -1 - android.widget.RelativeLayout]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 3 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\InterComponentCommunication_Implicit2.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("deviceid", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.implicit2.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.implicit2.FooActivity: void onCreate(android.os.Bundle)>)
+Found a flow to sink virtualinvoke $r0.<com.ksu.implicit2.MainActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r5 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.implicit2.MainActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 135.394584 MB
+Analysis has run for 7.222196771 seconds
+ 
+##### Analisi del file: InterComponentCommunication_Implicit3.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.implicit3.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.implicit3.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_foo.xml
+Found 2 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 3 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.TextView, -1 - android.widget.RelativeLayout], res/layout/activity_foo.xml=[-1 - android.widget.TextView, -1 - android.widget.RelativeLayout]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 3 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\InterComponentCommunication_Implicit3.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("deviceid", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.implicit3.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.implicit3.FooActivity: void onCreate(android.os.Bundle)>)
+Found a flow to sink virtualinvoke $r0.<com.ksu.implicit3.MainActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r5 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.implicit3.MainActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 137.910496 MB
+Analysis has run for 6.986066078 seconds
+ 
+##### Analisi del file: InterComponentCommunication_Implicit4.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.implicit4.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.implicit4.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_foo.xml
+Found 2 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 3 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView], res/layout/activity_foo.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 3 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\InterComponentCommunication_Implicit4.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink virtualinvoke $r0.<com.ksu.implicit4.MainActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r5 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.implicit4.MainActivity: void onCreate(android.os.Bundle)>)
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("deviceid", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.implicit4.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.implicit4.FooActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 137.917992 MB
+Analysis has run for 6.982511102 seconds
+ 
+##### Analisi del file: InterComponentCommunication_Implicit5.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.implicit5.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.implicit5.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_foo.xml
+Found 2 layout controls in file res/layout/activity_hook.xml
+Found 3 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 3 components...
+Incremental callback analysis done.
+Found 4 callback methods for 3 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView], res/layout/activity_foo.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView], res/layout/activity_hook.xml=[-1 - android.widget.RelativeLayout, -1 - android.widget.TextView]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 4 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\InterComponentCommunication_Implicit5.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink virtualinvoke $r0.<com.ksu.implicit5.MainActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r5 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.implicit5.MainActivity: void onCreate(android.os.Bundle)>)
+Found a flow to sink virtualinvoke $r0.<com.ksu.implicit5.FooActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r4 = virtualinvoke $r0.<com.ksu.implicit5.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.implicit5.FooActivity: void onCreate(android.os.Bundle)>)
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("deviceid", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.implicit5.HookActivity: android.content.Intent getIntent()>() (in <com.ksu.implicit5.HookActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 138.303216 MB
+Analysis has run for 7.55281473 seconds
+ 
+##### Analisi del file: InterComponentCommunication_Implicit6.apk .. ##### 
+ 
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.1 seconds.
+[Spark] Solution found in 0.1 seconds.
+Callback analysis done.
+Warning: RelativeLayout is a phantom class!
+Warning: com.ksu.implicit6.RelativeLayout is a phantom class!
+Warning: android.view.RelativeLayout is a phantom class!
+Warning: TextView is a phantom class!
+Warning: com.ksu.implicit6.TextView is a phantom class!
+Warning: android.view.TextView is a phantom class!
+Found 1 layout controls in file res/layout/activity_foo.xml
+Found 2 layout controls in file res/layout/activity_main.xml
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Running incremental callback analysis for 2 components...
+Incremental callback analysis done.
+Found 3 callback methods for 2 components
+Found {res/layout/activity_main.xml=[-1 - android.widget.TextView, -1 - android.widget.RelativeLayout], res/layout/activity_foo.xml=[-1 - android.widget.TextView, -1 - android.widget.RelativeLayout]} layout controls
+Entry point calculation done.
+Created a SourceSinkManager with 89 sources, 133 sinks, and 3 callback methods.
+Running data flow analysis...
+Running data flow analysis on C:\Users\WILMER\SRSS-MMA\INVESTIGATION\InterComponentCommunication_Implicit6.apk with 89 sources and 133 sinks...
+Starting infoflow computation...
+Warning: java.lang.invoke.LambdaMetafactory is a phantom class!
+Warning: java.lang.ref.Finalizer is a phantom class!
+[Call Graph] For information on where the call graph may be incomplete, use the verbose option to the cg phase.
+[Spark] Pointer Assignment Graph in 0.0 seconds.
+[Spark] Type masks in 0.0 seconds.
+[Spark] Pointer Graph simplified in 0.0 seconds.
+[Spark] Propagation in 0.0 seconds.
+[Spark] Solution found in 0.0 seconds.
+Found a flow to sink virtualinvoke $r0.<com.ksu.implicit6.MainActivity: void startActivity(android.content.Intent)>($r2), from the following sources:
+	- $r5 = virtualinvoke $r4.<android.telephony.TelephonyManager: java.lang.String getDeviceId()>() (in <com.ksu.implicit6.MainActivity: void onCreate(android.os.Bundle)>)
+Found a flow to sink staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>("deviceid", $r3), from the following sources:
+	- $r2 = virtualinvoke $r0.<com.ksu.implicit6.FooActivity: android.content.Intent getIntent()>() (in <com.ksu.implicit6.FooActivity: void onCreate(android.os.Bundle)>)
+Maximum memory consumption: 137.878336 MB
+Analysis has run for 7.457269368 seconds
+ 
+##### FINE ELABORAZIONE MASSIVA CON FLOWDROID ##### 
