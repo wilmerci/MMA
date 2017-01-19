@@ -1,0 +1,1 @@
+This Branch contains all the executable BAT/SH File to process Massively APK files with the appropriate tools.
