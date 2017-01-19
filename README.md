@@ -1,2 +1,0 @@
-# MMA
-Massive Malware Analyzer
