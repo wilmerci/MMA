@@ -1,0 +1,63 @@
+Application Name: InterComponentCommunication_DynRegister2.apk
+Uses Permissions: android.permission.READ_PHONE_STATE
+
+Component com.ksu.dynamicregister2.MyReceiver
+  Component type: receiver
+  Exported: true
+  Dynamic Registered: true
+  Required Permission: 
+  IntentFilters:
+    IntentFilter:(Actions:["ANY"])
+
+  Inter-component communication (ICC) Result:
+
+
+Component com.ksu.dynamicregister2.MainActivity
+  Component type: activity
+  Exported: true
+  Dynamic Registered: false
+  Required Permission: 
+  IntentFilters:
+    IntentFilter:(Actions:["android.intent.action.MAIN"],Categories:["android.intent.category.LAUNCHER"])
+
+  Inter-component communication (ICC) Result:
+    ICC call details are listed below:
+      Caller Procedure: Landroid/content/ContextWrapper;.sendBroadcast:(Landroid/content/Intent;)V
+      Caller Context: (onCreate,L03f0a4)(envMain,L9)
+      Outgoing Intents via this call:
+        Intent:
+          mActions:
+            "com.ksu"
+          ICC destinations:
+            Target Component: com.ksu.dynamicregister2.MyReceiver, Intent Type: IMPLICIT
+
+
+Taint analysis result:
+  Sources found:
+    <Descriptors: api_source: Landroid/telephony/TelephonyManager?;.getDeviceId:()Ljava/lang/String; >
+  Sinks found:
+    <Descriptors: api_sink: Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I 0>
+    <Descriptors: api_sink: Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I 1>
+    <Descriptors: icc_sink: L03f0a4 1>
+  Discovered taint paths are listed below:
+    TaintPath:
+      Source: <Descriptors: api_source: Landroid/telephony/TelephonyManager?;.getDeviceId:()Ljava/lang/String; >
+      Sink: <Descriptors: api_sink: Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I 1>
+      Types: maliciousness:information_theft
+      The path consists of the following edges ("->"). The nodes have the context information (p1 to pn means which parameter). The source is at the top :
+        Call@(onCreate,L03f0a4)(envMain,L9)p1  ->
+        Entry@Lcom/ksu/dynamicregister2/MyReceiver;.env:(Landroid/content/Intent;)Vp0  ->
+        Call@(env,L31)p2  ->
+        Entry@Lcom/ksu/dynamicregister2/MyReceiver;.onReceive:(Landroid/content/Context;Landroid/content/Intent;)Vp2  ->
+        Call@(onReceive,L03f104)(env,L31)p0  ->
+        VirtualBody@(onReceive,L03f104)(env,L31)  ->
+        Call@(onReceive,L03f10c)(env,L31)p1  ->
+        VirtualBody@(onCreate,L03f084)(envMain,L9)
+
+    TaintPath:
+      Source: <Descriptors: api_source: Landroid/telephony/TelephonyManager?;.getDeviceId:()Ljava/lang/String; >
+      Sink: <Descriptors: icc_sink: L03f0a4 1>
+      Types: vulnerability:information_leak
+      The path consists of the following edges ("->"). The nodes have the context information (p1 to pn means which parameter). The source is at the top :
+        Call@(onCreate,L03f0a4)(envMain,L9)p1  ->
+        VirtualBody@(onCreate,L03f084)(envMain,L9)

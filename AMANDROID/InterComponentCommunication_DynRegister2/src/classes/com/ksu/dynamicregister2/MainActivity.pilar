@@ -1,0 +1,67 @@
+record `com.ksu.dynamicregister2.MainActivity` @kind class @AccessFlag PUBLIC extends `android.app.Activity` @kind class {
+}
+procedure `void` `com.ksu.dynamicregister2.MainActivity.<init>`(`com.ksu.dynamicregister2.MainActivity` MainActivity_v0 @kind this) @owner ^`com.ksu.dynamicregister2.MainActivity` @signature `Lcom/ksu/dynamicregister2/MainActivity;.<init>:()V` @AccessFlag PUBLIC_CONSTRUCTOR {
+
+  #L03f00c.  call `android.app.Activity.<init>`(MainActivity_v0) @signature `Landroid/app/Activity;.<init>:()V` @classDescriptor ^`android.app.Activity` @kind direct;
+  #L03f012.  return  @kind void;
+}
+procedure `void` `com.ksu.dynamicregister2.MainActivity.onCreate`(`com.ksu.dynamicregister2.MainActivity` MainActivity_v7 @kind this, `android.os.Bundle` Bundle_v8 @kind object) @owner ^`com.ksu.dynamicregister2.MainActivity` @signature `Lcom/ksu/dynamicregister2/MainActivity;.onCreate:(Landroid/os/Bundle;)V` @AccessFlag PROTECTED {
+    `java.lang.StringBuilder` StringBuilder_v2;
+    `android.content.IntentFilter` IntentFilter_v5;
+    `java.lang.String` String_v4;
+    `android.content.Intent` Intent_temp;
+    `java.lang.Object` Object_temp;
+    `com.ksu.dynamicregister2.MyReceiver` MyReceiver_v4;
+    `java.lang.Object` Object_v3;
+    `int` int_v4;
+    `java.lang.StringBuilder` StringBuilder_temp;
+    `android.content.Intent` Intent_v0;
+    `android.telephony.TelephonyManager` TelephonyManager_v3;
+    `java.lang.String` String_temp;
+    `java.lang.String` String_v1;
+    `java.lang.String` String_v6;
+
+  #L03f024.  call `android.app.Activity.onCreate`(MainActivity_v7, Bundle_v8) @signature `Landroid/app/Activity;.onCreate:(Landroid/os/Bundle;)V` @classDescriptor ^`android.app.Activity` @kind super;
+  #L03f02a.  int_v4:= 2130903040I;
+  #L03f02e.  call `com.ksu.dynamicregister2.MainActivity.setContentView`(MainActivity_v7, int_v4) @signature `Lcom/ksu/dynamicregister2/MainActivity;.setContentView:(I)V` @classDescriptor ^`com.ksu.dynamicregister2.MainActivity` @kind virtual;
+  #L03f034.  StringBuilder_v2:= new `java.lang.StringBuilder`;
+  #L03f038.  call `java.lang.StringBuilder.<init>`(StringBuilder_v2) @signature `Ljava/lang/StringBuilder;.<init>:()V` @classDescriptor ^`java.lang.StringBuilder` @kind direct;
+  #L03f03e.  String_v4:= "com." @kind object;
+  #L03f042.  call StringBuilder_temp:=  `java.lang.StringBuilder.append`(StringBuilder_v2, String_v4) @signature `Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;` @classDescriptor ^`java.lang.StringBuilder` @kind virtual;
+  #L03f048.  String_v4:= "ksu" @kind object;
+  #L03f04c.  call StringBuilder_temp:=  `java.lang.StringBuilder.append`(StringBuilder_v2, String_v4) @signature `Ljava/lang/StringBuilder;.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;` @classDescriptor ^`java.lang.StringBuilder` @kind virtual;
+  #L03f052.  MyReceiver_v4:= new `com.ksu.dynamicregister2.MyReceiver`;
+  #L03f056.  call `com.ksu.dynamicregister2.MyReceiver.<init>`(MyReceiver_v4) @signature `Lcom/ksu/dynamicregister2/MyReceiver;.<init>:()V` @classDescriptor ^`com.ksu.dynamicregister2.MyReceiver` @kind direct;
+  #L03f05c.  IntentFilter_v5:= new `android.content.IntentFilter`;
+  #L03f060.  call String_temp:=  `java.lang.StringBuilder.toString`(StringBuilder_v2) @signature `Ljava/lang/StringBuilder;.toString:()Ljava/lang/String;` @classDescriptor ^`java.lang.StringBuilder` @kind virtual;
+  #L03f066.  String_v6:= String_temp  @kind object;
+  #L03f068.  call `android.content.IntentFilter.<init>`(IntentFilter_v5, String_v6) @signature `Landroid/content/IntentFilter;.<init>:(Ljava/lang/String;)V` @classDescriptor ^`android.content.IntentFilter` @kind direct;
+  #L03f06e.  call Intent_temp:=  `com.ksu.dynamicregister2.MainActivity.registerReceiver`(MainActivity_v7, MyReceiver_v4, IntentFilter_v5) @signature `Lcom/ksu/dynamicregister2/MainActivity;.registerReceiver:(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;` @classDescriptor ^`com.ksu.dynamicregister2.MainActivity` @kind virtual;
+  #L03f074.  String_v4:= "phone" @kind object;
+  #L03f078.  call Object_temp:=  `com.ksu.dynamicregister2.MainActivity.getSystemService`(MainActivity_v7, String_v4) @signature `Lcom/ksu/dynamicregister2/MainActivity;.getSystemService:(Ljava/lang/String;)Ljava/lang/Object;` @classDescriptor ^`com.ksu.dynamicregister2.MainActivity` @kind virtual;
+  #L03f07e.  Object_v3:= Object_temp  @kind object;
+  #L03f080.  TelephonyManager_v3:= (`android.telephony.TelephonyManager`)Object_v3  @kind object;
+  #L03f084.  call String_temp:=  `android.telephony.TelephonyManager.getDeviceId`(TelephonyManager_v3) @signature `Landroid/telephony/TelephonyManager;.getDeviceId:()Ljava/lang/String;` @classDescriptor ^`android.telephony.TelephonyManager` @kind virtual;
+  #L03f08a.  String_v1:= String_temp  @kind object;
+  #L03f08c.  Intent_v0:= new `android.content.Intent`;
+  #L03f090.  String_v4:= "com.ksu" @kind object;
+  #L03f094.  call `android.content.Intent.<init>`(Intent_v0, String_v4) @signature `Landroid/content/Intent;.<init>:(Ljava/lang/String;)V` @classDescriptor ^`android.content.Intent` @kind direct;
+  #L03f09a.  String_v4:= "id" @kind object;
+  #L03f09e.  call Intent_temp:=  `android.content.Intent.putExtra`(Intent_v0, String_v4, String_v1) @signature `Landroid/content/Intent;.putExtra:(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;` @classDescriptor ^`android.content.Intent` @kind virtual;
+  #L03f0a4.  call `com.ksu.dynamicregister2.MainActivity.sendBroadcast`(MainActivity_v7, Intent_v0) @signature `Lcom/ksu/dynamicregister2/MainActivity;.sendBroadcast:(Landroid/content/Intent;)V` @classDescriptor ^`com.ksu.dynamicregister2.MainActivity` @kind virtual;
+  #L03f0aa.  return  @kind void;
+}
+procedure `boolean` `com.ksu.dynamicregister2.MainActivity.onCreateOptionsMenu`(`com.ksu.dynamicregister2.MainActivity` MainActivity_v2 @kind this, `android.view.Menu` Menu_v3 @kind object) @owner ^`com.ksu.dynamicregister2.MainActivity` @signature `Lcom/ksu/dynamicregister2/MainActivity;.onCreateOptionsMenu:(Landroid/view/Menu;)Z` @AccessFlag PUBLIC {
+    `android.view.MenuInflater` MenuInflater_v0;
+    `boolean` boolean_v0;
+    `int` int_v0;
+    `int` int_v1;
+    `android.view.MenuInflater` MenuInflater_temp;
+
+  #L03f0bc.  call MenuInflater_temp:=  `com.ksu.dynamicregister2.MainActivity.getMenuInflater`(MainActivity_v2) @signature `Lcom/ksu/dynamicregister2/MainActivity;.getMenuInflater:()Landroid/view/MenuInflater;` @classDescriptor ^`com.ksu.dynamicregister2.MainActivity` @kind virtual;
+  #L03f0c2.  MenuInflater_v0:= MenuInflater_temp  @kind object;
+  #L03f0c4.  int_v1:= 2131165184I;
+  #L03f0c8.  call `android.view.MenuInflater.inflate`(MenuInflater_v0, int_v1, Menu_v3) @signature `Landroid/view/MenuInflater;.inflate:(ILandroid/view/Menu;)V` @classDescriptor ^`android.view.MenuInflater` @kind virtual;
+  #L03f0ce.  boolean_v0:= 1I;
+  #L03f0d0.  return boolean_v0;
+}

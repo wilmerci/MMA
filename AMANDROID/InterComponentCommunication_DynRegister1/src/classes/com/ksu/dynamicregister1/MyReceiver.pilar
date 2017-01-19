@@ -1,0 +1,20 @@
+record `com.ksu.dynamicregister1.MyReceiver` @kind class @AccessFlag PUBLIC extends `android.content.BroadcastReceiver` @kind class {
+}
+procedure `void` `com.ksu.dynamicregister1.MyReceiver.<init>`(`com.ksu.dynamicregister1.MyReceiver` MyReceiver_v0 @kind this) @owner ^`com.ksu.dynamicregister1.MyReceiver` @signature `Lcom/ksu/dynamicregister1/MyReceiver;.<init>:()V` @AccessFlag PUBLIC_CONSTRUCTOR {
+
+  #L03f080.  call `android.content.BroadcastReceiver.<init>`(MyReceiver_v0) @signature `Landroid/content/BroadcastReceiver;.<init>:()V` @classDescriptor ^`android.content.BroadcastReceiver` @kind direct;
+  #L03f086.  return  @kind void;
+}
+procedure `void` `com.ksu.dynamicregister1.MyReceiver.onReceive`(`com.ksu.dynamicregister1.MyReceiver` MyReceiver_v2 @kind this, `android.content.Context` Context_v3 @kind object, `android.content.Intent` Intent_v4 @kind object) @owner ^`com.ksu.dynamicregister1.MyReceiver` @signature `Lcom/ksu/dynamicregister1/MyReceiver;.onReceive:(Landroid/content/Context;Landroid/content/Intent;)V` @AccessFlag PUBLIC {
+    `int` int_temp;
+    `java.lang.String` String_v0;
+    `java.lang.String` String_temp;
+    `java.lang.String` String_v1;
+
+  #L03f098.  String_v0:= "Id" @kind object;
+  #L03f09c.  String_v1:= "id" @kind object;
+  #L03f0a0.  call String_temp:=  `android.content.Intent.getStringExtra`(Intent_v4, String_v1) @signature `Landroid/content/Intent;.getStringExtra:(Ljava/lang/String;)Ljava/lang/String;` @classDescriptor ^`android.content.Intent` @kind virtual;
+  #L03f0a6.  String_v1:= String_temp  @kind object;
+  #L03f0a8.  call int_temp:=  `android.util.Log.d`(String_v0, String_v1) @signature `Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I` @classDescriptor ^`android.util.Log` @kind static;
+  #L03f0ae.  return  @kind void;
+}

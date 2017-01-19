@@ -1,0 +1,49 @@
+record `com.ksu.implicit1.MainActivity` @kind class @AccessFlag PUBLIC extends `android.app.Activity` @kind class {
+}
+procedure `void` `com.ksu.implicit1.MainActivity.<init>`(`com.ksu.implicit1.MainActivity` MainActivity_v0 @kind this) @owner ^`com.ksu.implicit1.MainActivity` @signature `Lcom/ksu/implicit1/MainActivity;.<init>:()V` @AccessFlag PUBLIC_CONSTRUCTOR {
+
+  #L02c2f0.  call `android.app.Activity.<init>`(MainActivity_v0) @signature `Landroid/app/Activity;.<init>:()V` @classDescriptor ^`android.app.Activity` @kind direct;
+  #L02c2f6.  return  @kind void;
+}
+procedure `void` `com.ksu.implicit1.MainActivity.onCreate`(`com.ksu.implicit1.MainActivity` MainActivity_v4 @kind this, `android.os.Bundle` Bundle_v5 @kind object) @owner ^`com.ksu.implicit1.MainActivity` @signature `Lcom/ksu/implicit1/MainActivity;.onCreate:(Landroid/os/Bundle;)V` @AccessFlag PROTECTED {
+    `android.telephony.TelephonyManager` TelephonyManager_v2;
+    `java.lang.String` String_v3;
+    `android.content.Intent` Intent_temp;
+    `java.lang.Object` Object_temp;
+    `java.lang.Object` Object_v2;
+    `int` int_v3;
+    `android.content.Intent` Intent_v0;
+    `java.lang.String` String_temp;
+    `java.lang.String` String_v1;
+
+  #L02c308.  call `android.app.Activity.onCreate`(MainActivity_v4, Bundle_v5) @signature `Landroid/app/Activity;.onCreate:(Landroid/os/Bundle;)V` @classDescriptor ^`android.app.Activity` @kind super;
+  #L02c30e.  int_v3:= 2130903041I;
+  #L02c314.  call `com.ksu.implicit1.MainActivity.setContentView`(MainActivity_v4, int_v3) @signature `Lcom/ksu/implicit1/MainActivity;.setContentView:(I)V` @classDescriptor ^`com.ksu.implicit1.MainActivity` @kind virtual;
+  #L02c31a.  String_v3:= "phone" @kind object;
+  #L02c31e.  call Object_temp:=  `com.ksu.implicit1.MainActivity.getSystemService`(MainActivity_v4, String_v3) @signature `Lcom/ksu/implicit1/MainActivity;.getSystemService:(Ljava/lang/String;)Ljava/lang/Object;` @classDescriptor ^`com.ksu.implicit1.MainActivity` @kind virtual;
+  #L02c324.  Object_v2:= Object_temp  @kind object;
+  #L02c326.  TelephonyManager_v2:= (`android.telephony.TelephonyManager`)Object_v2  @kind object;
+  #L02c32a.  call String_temp:=  `android.telephony.TelephonyManager.getDeviceId`(TelephonyManager_v2) @signature `Landroid/telephony/TelephonyManager;.getDeviceId:()Ljava/lang/String;` @classDescriptor ^`android.telephony.TelephonyManager` @kind virtual;
+  #L02c330.  String_v1:= String_temp  @kind object;
+  #L02c332.  Intent_v0:= new `android.content.Intent`;
+  #L02c336.  String_v3:= "amandroid.impliciticctest_action.testaction" @kind object;
+  #L02c33a.  call `android.content.Intent.<init>`(Intent_v0, String_v3) @signature `Landroid/content/Intent;.<init>:(Ljava/lang/String;)V` @classDescriptor ^`android.content.Intent` @kind direct;
+  #L02c340.  String_v3:= "data" @kind object;
+  #L02c344.  call Intent_temp:=  `android.content.Intent.putExtra`(Intent_v0, String_v3, String_v1) @signature `Landroid/content/Intent;.putExtra:(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;` @classDescriptor ^`android.content.Intent` @kind virtual;
+  #L02c34a.  call `com.ksu.implicit1.MainActivity.startActivity`(MainActivity_v4, Intent_v0) @signature `Lcom/ksu/implicit1/MainActivity;.startActivity:(Landroid/content/Intent;)V` @classDescriptor ^`com.ksu.implicit1.MainActivity` @kind virtual;
+  #L02c350.  return  @kind void;
+}
+procedure `boolean` `com.ksu.implicit1.MainActivity.onCreateOptionsMenu`(`com.ksu.implicit1.MainActivity` MainActivity_v2 @kind this, `android.view.Menu` Menu_v3 @kind object) @owner ^`com.ksu.implicit1.MainActivity` @signature `Lcom/ksu/implicit1/MainActivity;.onCreateOptionsMenu:(Landroid/view/Menu;)Z` @AccessFlag PUBLIC {
+    `android.view.MenuInflater` MenuInflater_v0;
+    `boolean` boolean_v0;
+    `int` int_v0;
+    `int` int_v1;
+    `android.view.MenuInflater` MenuInflater_temp;
+
+  #L02c364.  call MenuInflater_temp:=  `com.ksu.implicit1.MainActivity.getMenuInflater`(MainActivity_v2) @signature `Lcom/ksu/implicit1/MainActivity;.getMenuInflater:()Landroid/view/MenuInflater;` @classDescriptor ^`com.ksu.implicit1.MainActivity` @kind virtual;
+  #L02c36a.  MenuInflater_v0:= MenuInflater_temp  @kind object;
+  #L02c36c.  int_v1:= 2131165184I;
+  #L02c370.  call `android.view.MenuInflater.inflate`(MenuInflater_v0, int_v1, Menu_v3) @signature `Landroid/view/MenuInflater;.inflate:(ILandroid/view/Menu;)V` @classDescriptor ^`android.view.MenuInflater` @kind virtual;
+  #L02c376.  boolean_v0:= 1I;
+  #L02c378.  return boolean_v0;
+}
