@@ -1,0 +1,86 @@
+Application Name: AndroidSpecific_PrivateDataLeak3.apk
+Uses Permissions: 
+
+Component com.ksu.passwordPassTest.FooActivity
+  Component type: activity
+  Exported: false
+  Dynamic Registered: false
+  Required Permission: 
+  IntentFilters:
+
+  Inter-component communication (ICC) Result:
+    ICC call details are listed below:
+      Caller Procedure: Landroid/app/Activity;.startActivity:(Landroid/content/Intent;)V
+      Caller Context: (onCreate,L0470e0)(env,L9)
+      Outgoing Intents via this call:
+        Intent:
+          mComponentNames:
+            "com.ksu.passwordPassTest.BarActivity"
+          ICC destinations:
+            Target Component: com.ksu.passwordPassTest.BarActivity, Intent Type: EXPLICIT
+
+Component com.ksu.passwordPassTest.MainActivity
+  Component type: activity
+  Exported: true
+  Dynamic Registered: false
+  Required Permission: 
+  IntentFilters:
+    IntentFilter:(Actions:["android.intent.action.MAIN"],Categories:["android.intent.category.LAUNCHER"])
+
+  Inter-component communication (ICC) Result:
+    ICC call details are listed below:
+      Caller Procedure: Landroid/app/Activity;.startActivity:(Landroid/content/Intent;)V
+      Caller Context: (onClick,L04715a)(envMain,L43)
+      Outgoing Intents via this call:
+        Intent:
+          mComponentNames:
+            "com.ksu.passwordPassTest.FooActivity"
+          ICC destinations:
+            Target Component: com.ksu.passwordPassTest.FooActivity, Intent Type: EXPLICIT
+
+Component com.ksu.passwordPassTest.BarActivity
+  Component type: activity
+  Exported: false
+  Dynamic Registered: false
+  Required Permission: 
+  IntentFilters:
+
+  Inter-component communication (ICC) Result:
+
+
+
+Taint analysis result:
+  Sources found:
+    <Descriptors: api_source: Landroid/app/Activity;.findViewById:(I)Landroid/view/View; >
+  Sinks found:
+    <Descriptors: api_sink: Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I 0>
+    <Descriptors: api_sink: Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I 1>
+  Discovered taint paths are listed below:
+    TaintPath:
+      Source: <Descriptors: api_source: Landroid/app/Activity;.findViewById:(I)Landroid/view/View; >
+      Sink: <Descriptors: api_sink: Landroid/util/Log;.d:(Ljava/lang/String;Ljava/lang/String;)I 1>
+      Types: maliciousness:information_theft
+      The path consists of the following edges ("->"). The nodes have the context information (p1 to pn means which parameter). The source is at the top :
+        VirtualBody@(onClick,L04713e)(envMain,L43)  ->
+        Call@(onClick,L04715a)(envMain,L43)p1  ->
+        Entry@Lcom/ksu/passwordPassTest/FooActivity;.env:(Landroid/content/Intent;)Vp0  ->
+        Call@(env,L6)p1  ->
+        VirtualBody@(env,L6)  ->
+        Call@(env,L9)p0  ->
+        Entry@Lcom/ksu/passwordPassTest/FooActivity;.onCreate:(Landroid/os/Bundle;)Vp0  ->
+        Call@(onCreate,L0470c4)(env,L9)p0  ->
+        VirtualBody@(onCreate,L0470c4)(env,L9)  ->
+        VirtualBody@(onCreate,L0470d0)(env,L9)  ->
+        Call@(onCreate,L0470e0)(env,L9)p1  ->
+        Entry@Lcom/ksu/passwordPassTest/BarActivity;.env:(Landroid/content/Intent;)Vp0  ->
+        Call@(env,L61)p1  ->
+        VirtualBody@(env,L61)  ->
+        Call@(env,L64)p0  ->
+        Entry@Lcom/ksu/passwordPassTest/BarActivity;.onCreate:(Landroid/os/Bundle;)Vp0  ->
+        Call@(onCreate,L04702c)(env,L64)p0  ->
+        VirtualBody@(onCreate,L04702c)(env,L64)  ->
+        VirtualBody@(onCreate,L047038)(env,L64)  ->
+        Call@(onCreate,L047042)(env,L64)p0  ->
+        VirtualBody@(onCreate,L047042)(env,L64)  ->
+        Call@(onCreate,L04704a)(env,L64)p1  ->
+        VirtualBody@(onCreate,L0471b0)(envMain,L30)
