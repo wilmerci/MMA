@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.ksu.implicit5" platformBuildVersionCode="21" platformBuildVersionName="5.0.1-1624448">
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <application android:allowBackup="true" android:debuggable="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="com.ksu.implicit5.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.ksu.implicit5.FooActivity">
+            <intent-filter>
+                <action android:name="test_action"/>
+                <category android:name="test_category1"/>
+                <category android:name="test_category2"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="ksu" android:mimeType="test/type" android:pathPrefix="/abc" android:port="\ 8888" android:scheme="amandroid"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.ksu.implicit5.HookActivity">
+            <intent-filter>
+                <action android:name="test_action2"/>
+                <category android:name="test_category3"/>
+                <category android:name="test_category4"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="ksu" android:mimeType="test/type" android:pathPattern=".*\\.com" android:port="\ 8888" android:scheme="amandroid"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
